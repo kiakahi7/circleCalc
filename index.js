@@ -14,13 +14,13 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res){
 
-  var radCircle = parseFloat(req.body.n1);;
+  var radCylinder = parseFloat(req.body.n1);
+  var heightCylinder = parseFloat(req.body.n2);
 
-    var areaCircle = Math.PI * Math.pow(radCircle, 2);
-    var circumCircle = 2 * Math.PI * radCircle;
-    var volCircle = 4/3 * Math.PI * Math.pow(radCircle,3);
+    var circumCylinder = 2 * Math.PI * radCylinder;
+    var volCylinder = heightCylinder * Math.PI * Math.pow(radCylinder, 2);
 
-  res.send("The Area of the Cirle is " + areaCircle.toFixed(2) + " the Circumference is " + circumCircle.toFixed(2) + " and the Volume is " + volCircle.toFixed(2));
+  res.send("The Volume of the Cylinder is " + volCylinder.toFixed(2));
 });
 
 app.listen(3000, function() {
